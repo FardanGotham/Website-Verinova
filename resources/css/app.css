@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    transition:
+        background-color .3s,
+        color .3s,
+        border-color .3s;
+}
+
+html{
+    scroll-behavior:smooth;
+}
