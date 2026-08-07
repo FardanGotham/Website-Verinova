@@ -21,12 +21,6 @@ XII PPLG 2
 
 </h1>
 
-<p class="text-xs text-slate-400">
-
-Website Kelas
-
-</p>
-
 </div>
 
 </div>

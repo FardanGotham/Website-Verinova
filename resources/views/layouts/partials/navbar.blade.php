@@ -38,7 +38,6 @@
                 <li><a href="#gallery" class="hover:text-blue-600 transition">Galeri</a></li>
                 <li><a href="#achievement" class="hover:text-blue-600 transition">Prestasi</a></li>
                 <li><a href="#info-kelas" class="hover:text-blue-600 transition">Info</a></li>
-                <li><a href="#contact" class="hover:text-blue-600 transition">Kontak</a></li>
 
             </ul>
 

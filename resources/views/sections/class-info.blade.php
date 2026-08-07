@@ -5,7 +5,7 @@
         <div class="text-center mb-16">
 
             <h2 class="text-5xl font-bold text-slate-800">
-                📢 Info Kelas
+                 Info Kelas
             </h2>
 
             <p class="text-slate-500 mt-4">
