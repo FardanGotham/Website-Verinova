@@ -1,10 +1,11 @@
-<section id="piket" class="py-20 bg-slate-50">
+<section id="piket" class="py-20 bg-white
+           dark:bg-slate-950" data-aos="fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-14">
 
-            <h2 class="text-4xl font-bold text-slate-800">
+            <h2 class="text-5xl font-bold !text-slate-800 dark:!text-white">
                 Jadwal Piket
             </h2>
 

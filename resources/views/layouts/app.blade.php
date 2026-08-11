@@ -21,7 +21,7 @@ content="Website Resmi XII PPLG 2 SMK Negeri 2 Purbalingga">
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
-<body class="bg-white text-slate-800 transition-all duration-300 dark:bg-slate-950 dark:text-white">
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white transition-colors duration-300">
 
     @include('layouts.partials.navbar')
 

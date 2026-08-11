@@ -6,18 +6,30 @@
 
         <div class="h-16 lg:h-20 flex items-center justify-between">
 
-            {{-- Logo --}}
-            <a href="/" class="flex items-center gap-3">
+            {{-- LOGO --}}
+            <button
+                onclick="openLogoModal()"
+                class="group flex items-center gap-3 shrink-0">
 
-                <img
-                    src="{{ asset('images/verinova.jpg') }}"
-                    class="w-10 h-10 lg:w-12 lg:h-12 rounded-xl object-cover">
+                <div class="relative">
+
+                    <img
+                        src="{{ asset('images/verinova.jpeg') }}"
+                        alt="Logo Verinova"
+                        class="w-12 h-12 md:w-11 md:h-11
+                               object-contain rounded-xl
+                               transition-transform duration-300
+                               group-hover:scale-105">
+
+                  
+
+                </div>
 
                 <div>
-
-                    <h1 class="font-bold text-lg lg:text-xl text-slate-800 dark:text-white">
+                    <a href="{{ url('/') }}"
+                       class="text-lg lg:text-xl font-bold text-slate-800 dark:text-white">
                         XII PPLG 2
-                    </h1>
+                    </a>
 
                     <p class="hidden lg:block text-xs text-slate-500 dark:text-slate-400">
                         Website Resmi Kelas
@@ -25,71 +37,97 @@
 
                 </div>
 
-            </a>
+            </button>
 
-            {{-- Menu Desktop --}}
-            <ul class="hidden lg:flex items-center gap-8 font-medium text-slate-700 dark:text-slate-200">
 
-                <li><a href="#hero" class="hover:text-blue-600 transition">Beranda</a></li>
-                <li><a href="#about" class="hover:text-blue-600 transition">Profil</a></li>
-                <li><a href="#organization" class="hover:text-blue-600 transition">Organisasi</a></li>
-                <li><a href="#schedule" class="hover:text-blue-600 transition">Jadwal</a></li>
-                <li><a href="#piket" class="hover:text-blue-600 transition">Piket</a></li>
-                <li><a href="#gallery" class="hover:text-blue-600 transition">Galeri</a></li>
-                <li><a href="#achievement" class="hover:text-blue-600 transition">Prestasi</a></li>
-                <li><a href="#info-kelas" class="hover:text-blue-600 transition">Info</a></li>
+            {{-- MENU --}}
+            <div class="hidden lg:flex items-center gap-1">
 
-            </ul>
+                <a href="#hero"
+                   class="nav-link">
+                    Beranda
+                </a>
 
-            {{-- Desktop Right --}}
-            <div class="hidden lg:flex items-center gap-3">
+                <a href="#about"
+                   class="nav-link">
+                    Tentang
+                </a>
 
-                <button
-                    id="theme-toggle"
-                    class="w-11 h-11 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center transition">
+                <a href="#organization"
+                   class="nav-link">
+                    Organisasi
+                </a>
 
-                    🌙
+                <a href="#schedule"
+                   class="nav-link">
+                    Jadwal
+                </a>
 
-                </button>
+                <a href="#piket"
+                   class="nav-link">
+                    Piket
+                </a>
 
-                <a
-                    href="{{ route('login') }}"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-xl transition">
+                <a href="#gallery"
+                   class="nav-link">
+                    Galeri
+                </a>
 
-                    Login Admin
+                <a href="#achievement"
+                   class="nav-link">
+                    Prestasi
+                </a>
 
+                <a href="#info-kelas"
+                   class="nav-link">
+                    Info
                 </a>
 
             </div>
 
-            {{-- Mobile Right --}}
-            <div class="flex items-center gap-2 lg:hidden">
 
+            {{-- RIGHT --}}
+            <div class="flex items-center gap-2">
+
+                {{-- DARK MODE --}}
                 <button
-                    id="theme-toggle-mobile"
-                    class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                    id="theme-toggle"
+                    class="w-9 h-9
+                           flex items-center justify-center
+                           rounded-xl
+                           text-slate-600 dark:text-slate-300
+                           hover:bg-slate-100 dark:hover:bg-slate-800
+                           transition">
 
                     🌙
 
                 </button>
 
+
+                {{-- LOGIN --}}
+                <a
+    href="/login"
+    class="text-slate-700
+           dark:text-slate-200
+           hover:text-blue-600
+           dark:hover:text-cyan-400
+           transition">
+
+    Login
+
+</a>
+
+
+                {{-- MOBILE --}}
                 <button
-                    @click="open=!open"
-                    class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                    id="mobile-menu-button"
+                    class="lg:hidden w-9 h-9
+                           flex items-center justify-center
+                           rounded-xl
+                           text-slate-700 dark:text-slate-300
+                           hover:bg-slate-100 dark:hover:bg-slate-800">
 
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        class="w-7 h-7 text-slate-800 dark:text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"/>
-
-                    </svg>
+                    ☰
 
                 </button>
 
@@ -97,91 +135,255 @@
 
         </div>
 
-        {{-- Mobile Menu --}}
+
+        {{-- MOBILE MENU --}}
         <div
-            x-show="open"
-            x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 -translate-y-4"
-            x-transition:enter-end="opacity-100 translate-y-0"
-            x-transition:leave="transition ease-in duration-200"
-            x-transition:leave-start="opacity-100 translate-y-0"
-            x-transition:leave-end="opacity-0 -translate-y-4"
-            class="lg:hidden pb-6">
+            id="mobile-menu"
+            class="hidden lg:hidden mt-2
+                   p-2
+                   bg-white/95 dark:bg-slate-950/95
+                   backdrop-blur-xl
+                   border border-slate-200 dark:border-slate-800
+                   rounded-2xl shadow-lg">
 
-            <div class="flex flex-col gap-2 mt-3">
+            <a href="#hero" class="mobile-link">Beranda</a>
+            <a href="#about" class="mobile-link">Tentang</a>
+            <a href="#organization" class="mobile-link">Organisasi</a>
+            <a href="#schedule" class="mobile-link">Jadwal</a>
+            <a href="#piket" class="mobile-link">Piket</a>
+            <a href="#gallery" class="mobile-link">Galeri</a>
+            <a href="#achievement" class="mobile-link">Prestasi</a>
+            <a href="#info-kelas" class="mobile-link">Info</a>
 
-                <a @click="open=false" href="#hero" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">🏠 Beranda</a>
-
-                <a @click="open=false" href="#about" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">📖 Profil</a>
-
-                <a @click="open=false" href="#organization" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">👔 Organisasi</a>
-
-                <a @click="open=false" href="#schedule" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">📅 Jadwal</a>
-
-                <a @click="open=false" href="#piket" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">🧹 Jadwal Piket</a>
-
-                <a @click="open=false" href="#gallery" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">📸 Galeri</a>
-
-                <a @click="open=false" href="#achievement" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">🏆 Prestasi</a>
-
-                <a @click="open=false" href="#class-info" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">📢 Info Kelas</a>
-
-                <a @click="open=false" href="#contact" class="px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800">📞 Kontak</a>
-
-                <a
-                    href="{{ route('login') }}"
-                    class="mt-3 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl text-center transition">
-
-                    Login Admin
-
-                </a>
-
-            </div>
+            <a href="/login"
+               class="block mt-2 px-4 py-3 rounded-xl
+                      bg-slate-900 dark:bg-white
+                      text-slate-700 dark:text-slate-300
+                      text-sm font-medium text-center">
+                Login Admin
+            </a>
 
         </div>
 
     </div>
+</nav>
 
-    <script>
 
-        const html = document.documentElement;
+<style>
 
-        if(localStorage.getItem("theme") === "dark"){
-            html.classList.add("dark");
-        }
+    /* =========================
+       DESKTOP NAV
+    ========================= */
 
-        function updateThemeIcon(){
+    .nav-link {
+        position: relative;
 
-            const icon = html.classList.contains("dark") ? "☀️" : "🌙";
+        padding: 8px 12px;
 
-            const desktop = document.getElementById("theme-toggle");
-            const mobile = document.getElementById("theme-toggle-mobile");
+        font-size: 14px;
+        font-weight: 500;
 
-            if(desktop) desktop.innerHTML = icon;
-            if(mobile) mobile.innerHTML = icon;
+        color: rgb(100 116 139);
 
-        }
+        border-radius: 10px;
 
-        updateThemeIcon();
+        transition:
+            color .25s ease,
+            background .25s ease;
+    }
 
-        function toggleTheme(){
 
-            html.classList.toggle("dark");
+    .dark .nav-link {
+        color: rgb(148 163 184);
+    }
 
-            if(html.classList.contains("dark")){
-                localStorage.setItem("theme","dark");
-            }else{
-                localStorage.setItem("theme","light");
+
+    .nav-link:hover {
+        color: rgb(15 23 42);
+        background: rgb(241 245 249);
+    }
+
+
+    .dark .nav-link:hover {
+        color: white;
+        background: rgb(30 41 59);
+    }
+
+
+    /* garis kecil ketika aktif */
+
+    .nav-link::after {
+
+        content: "";
+
+        position: absolute;
+
+        left: 50%;
+        bottom: 3px;
+
+        width: 0;
+        height: 2px;
+
+        border-radius: 999px;
+
+        background: rgb(37 99 235);
+
+        transform: translateX(-50%);
+
+        transition: width .25s ease;
+    }
+
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+
+        width: 16px;
+
+    }
+
+
+    .nav-link.active {
+
+        color: rgb(37 99 235);
+
+    }
+
+
+    .dark .nav-link.active {
+
+        color: rgb(96 165 250);
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    .mobile-link {
+
+        display: block;
+
+        padding: 11px 14px;
+
+        border-radius: 10px;
+
+        font-size: 14px;
+        font-weight: 500;
+
+        color: rgb(71 85 105);
+
+        transition: .2s ease;
+
+    }
+
+
+    .dark .mobile-link {
+
+        color: rgb(203 213 225);
+
+    }
+
+
+    .mobile-link:hover {
+
+        background: rgb(241 245 249);
+
+        color: rgb(37 99 235);
+
+    }
+
+
+    .dark .mobile-link:hover {
+
+        background: rgb(30 41 59);
+
+        color: rgb(96 165 250);
+
+    }
+
+</style>
+
+
+<script>
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const mobileButton =
+        document.getElementById('mobile-menu-button');
+
+    const mobileMenu =
+        document.getElementById('mobile-menu');
+
+
+    mobileButton.addEventListener('click', () => {
+
+        mobileMenu.classList.toggle('hidden');
+
+    });
+
+
+    /* Tutup menu setelah memilih section */
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            mobileMenu.classList.add('hidden');
+
+        });
+
+    });
+
+
+    /* =========================
+       ACTIVE MENU SAAT SCROLL
+    ========================= */
+
+    const sections = document.querySelectorAll(
+        'section[id]'
+    );
+
+    const navLinks = document.querySelectorAll(
+        '.nav-link'
+    );
+
+
+    window.addEventListener('scroll', () => {
+
+        let current = 'hero';
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            if (window.scrollY >= sectionTop) {
+
+                current = section.getAttribute('id');
+
             }
 
-            updateThemeIcon();
+        });
 
-        }
 
-        document.getElementById("theme-toggle")?.addEventListener("click", toggleTheme);
+        navLinks.forEach(link => {
 
-        document.getElementById("theme-toggle-mobile")?.addEventListener("click", toggleTheme);
+            link.classList.remove('active');
 
-    </script>
+            if (
+                link.getAttribute('href') === '#' + current
+            ) {
 
-</nav>
+                link.classList.add('active');
+
+            }
+
+        });
+
+    });
+
+</script>

@@ -6,14 +6,14 @@
         preserveAspectRatio="none">
 
         <path
-            fill="#020617"
+            fill="#0F1729"
             fill-opacity="1"
             d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,154.7C840,149,960,171,1080,192C1200,213,1320,235,1380,245.3L1440,256L1440,320L0,320Z">
         </path>
 
     </svg>
 </div>
-<footer class="bg-slate-950 text-white">
+<footer class="bg-slate-900 text-white">
 
     <div class="max-w-7xl mx-auto px-6 py-16">
 
@@ -68,7 +68,7 @@
 
                     <li><a href="#hero" class="text-slate-400 hover:text-blue-400 transition">Beranda</a></li>
 
-                    <li><a href="#about" class="text-slate-400 hover:text-blue-400 transition">Profil</a></li>
+                    <li><a href="#about" class="text-slate-400 hover:text-blue-400 transition">Tentang</a></li>
 
                     <li><a href="#organization" class="text-slate-400 hover:text-blue-400 transition">Organisasi</a></li>
 
@@ -202,7 +202,7 @@
 
                 <p class="text-slate-500 text-sm">
 
-                    Made with | by XII PPLG 2
+                    Made by XII PPLG 2
 
                 </p>
 

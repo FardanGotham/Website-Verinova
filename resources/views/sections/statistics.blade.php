@@ -1,4 +1,6 @@
-<section class="py-24 bg-slate-100">
+<section class="py-24 bg-white
+           dark:bg-slate-950""
+    data-aos="fade-up">
 
 <div class="max-w-7xl mx-auto px-6">
 

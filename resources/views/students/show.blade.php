@@ -2,116 +2,321 @@
 
 @section('content')
 
-<section class="bg-slate-100 min-h-screen pb-20">
+{{-- =========================
+     HEADER
+========================= --}}
+<div
+    class="h-72
+           bg-gradient-to-r
+           from-blue-700
+           via-cyan-500
+           to-blue-400">
+</div>
 
-    {{-- Header --}}
-    <div class="h-72 bg-gradient-to-r from-blue-700 via-cyan-500 to-blue-400"></div>
 
-    <div class="max-w-5xl mx-auto px-6">
+<div
+    class="max-w-5xl
+           mx-auto
+           px-6
+           pb-16">
 
-        {{-- Profile --}}
-        <div class="-mt-28">
+    {{-- =========================
+         PROFILE
+    ========================= --}}
+    <div class="-mt-28">
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div
+            class="bg-white
+                   dark:bg-slate-900
+                   rounded-3xl
+                   shadow-xl
+                   dark:shadow-black/30
+                   overflow-hidden
+                   border
+                   border-transparent
+                   dark:border-slate-800">
 
-                <div class="text-center p-10">
+            <div class="text-center p-10">
 
-                    @if($student->photo)
+                {{-- FOTO --}}
+                @if($student->photo)
 
-                        <img
-                            src="{{ asset('storage/'.$student->photo) }}"
-                            class="w-44 h-44 rounded-full border-8 border-white object-cover mx-auto shadow-lg">
+                    <img
+                        src="{{ asset('storage/'.$student->photo) }}"
+                        alt="{{ $student->nama }}"
+                        class="w-44 h-44
+                               rounded-full
+                               border-8
+                               border-white
+                               dark:border-slate-900
+                               object-cover
+                               mx-auto
+                               shadow-lg">
 
-                    @else
+                @else
 
-                        <div class="w-44 h-44 rounded-full bg-slate-200 border-8 border-white flex items-center justify-center text-6xl mx-auto">
+                    <div
+                        class="w-44 h-44
+                               rounded-full
+                               bg-slate-200
+                               dark:bg-slate-700
+                               border-8
+                               border-white
+                               dark:border-slate-900
+                               flex items-center
+                               justify-center
+                               text-6xl
+                               mx-auto
+                               shadow-lg">
 
-                            👤
+                        👤
 
-                        </div>
+                    </div>
 
-                    @endif
+                @endif
 
-                    <h1 class="text-4xl font-bold mt-6">
 
-                        {{ $student->nama }}
+                {{-- NAMA --}}
+                <h1
+                    class="text-4xl
+                           font-bold
+                           mt-6
+                           text-slate-900
+                           dark:text-white">
 
-                    </h1>
+                    {{ $student->nama }}
 
-                    <p class="text-slate-500 mt-2">
+                </h1>
 
-                        {{ $student->kelas }}
 
+                {{-- KELAS --}}
+                <p
+                    class="mt-2
+                           text-lg
+                           text-slate-500
+                           dark:text-slate-300">
+
+                    {{ $student->kelas }}
+
+                    <span class="mx-2 text-blue-500 dark:text-cyan-400">
                         •
+                    </span>
 
-                        Absen {{ $student->absen }}
+                    Absen {{ $student->absen }}
 
-                    </p>
-
-                </div>
+                </p>
 
             </div>
 
         </div>
 
-        {{-- Biodata --}}
-        <div class="grid lg:grid-cols-2 gap-8 mt-10">
+    </div>
 
-            <div class="bg-white rounded-3xl shadow p-8">
 
-                <h2 class="text-2xl font-bold mb-6">
+    {{-- =========================
+         BIODATA
+    ========================= --}}
+    <div
+        class="grid
+               lg:grid-cols-2
+               gap-8
+               mt-10">
 
-                     Biodata
 
-                </h2>
+        {{-- BIODATA --}}
+        <div
+            class="bg-white
+                   dark:bg-slate-900
+                   rounded-3xl
+                   shadow-lg
+                   dark:shadow-black/30
+                   p-8
+                   border
+                   border-transparent
+                   dark:border-slate-800
+                   hover:-translate-y-1
+                   transition-all duration-300">
 
-                <div class="space-y-4">
+            <h2
+                class="text-2xl
+                       font-bold
+                       mb-6
+                       text-slate-900
+                       dark:text-white">
 
-                    <p><strong>Jenis Kelamin :</strong> {{ $student->gender ?: '-' }}</p>
+                <i
+                    class="fa-solid fa-id-card
+                           text-blue-600
+                           dark:text-cyan-400
+                           mr-2">
+                </i>
 
-                    <p><strong>Email :</strong> {{ $student->email ?: '-' }}</p>
+                Biodata
 
-                    <p><strong>No HP :</strong> {{ $student->phone ?: '-' }}</p>
+            </h2>
 
-                    <p><strong>Alamat :</strong> {{ $student->address ?: '-' }}</p>
 
-                </div>
+            <div
+                class="space-y-4
+                       text-slate-600
+                       dark:text-slate-300">
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        Jenis Kelamin :
+
+                    </strong>
+
+                    {{ $student->gender ?: '-' }}
+
+                </p>
+
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        Email :
+
+                    </strong>
+
+                    {{ $student->email ?: '-' }}
+
+                </p>
+
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        No HP :
+
+                    </strong>
+
+                    {{ $student->phone ?: '-' }}
+
+                </p>
+
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        Alamat :
+
+                    </strong>
+
+                    {{ $student->address ?: '-' }}
+
+                </p>
 
             </div>
 
-            <div class="bg-white rounded-3xl shadow p-8">
+        </div>
 
-                <h2 class="text-2xl font-bold mb-6">
 
-                     Tentang Saya
+        {{-- TENTANG SAYA --}}
+        <div
+            class="bg-white
+                   dark:bg-slate-900
+                   rounded-3xl
+                   shadow-lg
+                   dark:shadow-black/30
+                   p-8
+                   border
+                   border-transparent
+                   dark:border-slate-800
+                   hover:-translate-y-1
+                   transition-all duration-300">
 
-                </h2>
+            <h2
+                class="text-2xl
+                       font-bold
+                       mb-6
+                       text-slate-900
+                       dark:text-white">
 
-                <div class="space-y-4">
+                <i
+                    class="fa-solid fa-user
+                           text-blue-600
+                           dark:text-cyan-400
+                           mr-2">
+                </i>
+
+                Tentang Saya
+
+            </h2>
+
+
+            <div
+                class="space-y-4
+                       text-slate-600
+                       dark:text-slate-300">
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        Hobi :
+
+                    </strong>
+
+                    {{ $student->hobi ?: '-' }}
+
+                </p>
+
+
+                <p>
+
+                    <strong
+                        class="text-slate-900
+                               dark:text-white">
+
+                        Cita-cita :
+
+                    </strong>
+
+                    {{ $student->cita_cita ?: '-' }}
+
+                </p>
+
+
+                <div>
 
                     <p>
 
-                        <strong>Hobi :</strong>
+                        <strong
+                            class="text-slate-900
+                                   dark:text-white">
 
-                        {{ $student->hobi ?: '-' }}
+                            Quote :
 
-                    </p>
-
-                    <p>
-
-                        <strong>Cita-cita :</strong>
-
-                        {{ $student->cita_cita ?: '-' }}
+                        </strong>
 
                     </p>
 
-                    <p>
 
-                        <strong>Quote :</strong>
-
-                    </p>
-
-                    <blockquote class="italic text-slate-500 border-l-4 border-blue-500 pl-4">
+                    <blockquote
+                        class="italic
+                               text-slate-500
+                               dark:text-slate-300
+                               border-l-4
+                               border-blue-500
+                               dark:border-cyan-400
+                               pl-4
+                               mt-2">
 
                         {{ $student->quote ?: '-' }}
 
@@ -123,53 +328,175 @@
 
         </div>
 
-        {{-- Sosmed --}}
-        <div class="bg-white rounded-3xl shadow p-8 mt-8">
+    </div>
 
-            <h2 class="text-2xl font-bold mb-8">
 
-                🌐 Media Sosial
+    {{-- =========================
+         SOSMED
+    ========================= --}}
+    <div
+        class="bg-white
+               dark:bg-slate-900
+               rounded-3xl
+               shadow-lg
+               dark:shadow-black/30
+               p-8
+               mt-8
+               border
+               border-transparent
+               dark:border-slate-800
+               hover:-translate-y-1
+               transition-all duration-300">
 
-            </h2>
+        <h2
+            class="text-2xl
+                   font-bold
+                   mb-8
+                   text-slate-900
+                   dark:text-white">
 
-            <div class="flex flex-wrap gap-6 text-4xl">
+            <i
+                class="fa-solid fa-globe
+                       text-blue-600
+                       dark:text-cyan-400
+                       mr-2">
+            </i>
 
-                @if($student->instagram)
-                    <a href="{{ $student->instagram }}" target="_blank" class="text-pink-600 hover:scale-125 transition">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                @endif
+            Media Sosial
 
-                @if($student->github)
-                    <a href="{{ $student->github }}" target="_blank" class="text-gray-800 hover:scale-125 transition">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                @endif
+        </h2>
 
-                @if($student->linkedin)
-                    <a href="{{ $student->linkedin }}" target="_blank" class="text-blue-700 hover:scale-125 transition">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                @endif
 
-                @if($student->tiktok)
-                    <a href="{{ $student->tiktok }}" target="_blank" class="text-black hover:scale-125 transition">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                @endif
+        <div
+            class="flex
+                   flex-wrap
+                   gap-6
+                   text-4xl">
 
-                @if($student->website)
-                    <a href="{{ $student->website }}" target="_blank" class="text-green-600 hover:scale-125 transition">
-                        <i class="fa-solid fa-globe"></i>
-                    </a>
-                @endif
 
-            </div>
+            {{-- INSTAGRAM --}}
+            @if($student->instagram)
+
+                <a
+                    href="{{ $student->instagram }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-pink-600
+                           hover:scale-125
+                           hover:-translate-y-1
+                           transition-all duration-300">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+            @endif
+
+
+            {{-- GITHUB --}}
+            @if($student->github)
+
+                <a
+                    href="{{ $student->github }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-slate-800
+                           dark:text-white
+                           hover:scale-125
+                           hover:-translate-y-1
+                           transition-all duration-300">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </a>
+
+            @endif
+
+
+            {{-- LINKEDIN --}}
+            @if($student->linkedin)
+
+                <a
+                    href="{{ $student->linkedin }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-700
+                           dark:text-blue-400
+                           hover:scale-125
+                           hover:-translate-y-1
+                           transition-all duration-300">
+
+                    <i class="fa-brands fa-linkedin"></i>
+
+                </a>
+
+            @endif
+
+
+            {{-- TIKTOK --}}
+            @if($student->tiktok)
+
+                <a
+                    href="{{ $student->tiktok }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-black
+                           dark:text-white
+                           hover:scale-125
+                           hover:-translate-y-1
+                           transition-all duration-300">
+
+                    <i class="fa-brands fa-tiktok"></i>
+
+                </a>
+
+            @endif
+
+
+            {{-- WEBSITE --}}
+            @if($student->website)
+
+                <a
+                    href="{{ $student->website }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-green-600
+                           dark:text-green-400
+                           hover:scale-125
+                           hover:-translate-y-1
+                           transition-all duration-300">
+
+                    <i class="fa-solid fa-globe"></i>
+
+                </a>
+
+            @endif
+
+
+            {{-- JIKA TIDAK ADA SOSMED --}}
+            @if(
+                !$student->instagram &&
+                !$student->github &&
+                !$student->linkedin &&
+                !$student->tiktok &&
+                !$student->website
+            )
+
+                <p
+                    class="text-sm
+                           text-slate-500
+                           dark:text-slate-400">
+
+                    Belum ada media sosial yang ditambahkan.
+
+                </p>
+
+            @endif
 
         </div>
 
     </div>
 
-</section>
+</div>
 
 @endsection

@@ -1,10 +1,11 @@
-<section id="info-kelas" class="py-24 bg-slate-50">
+<section id="info-kelas" class="py-24 bg-white
+           dark:bg-slate-950" data-aos="fade-up">
 
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-16">
 
-            <h2 class="text-5xl font-bold text-slate-800">
+            <h2 class="text-5xl font-bold text-slate-800 dark:!text-white">
                  Info Kelas
             </h2>
 

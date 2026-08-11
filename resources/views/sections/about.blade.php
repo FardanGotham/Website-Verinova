@@ -1,25 +1,58 @@
 <section
-id="about"
-class="py-24 bg-white"
-data-aos="fade-up">
+    id="about"
+    class="py-14 md:py-16
+           bg-white
+           dark:bg-slate-950">
 
-<div class="max-w-6xl mx-auto px-6 text-center">
+    <div class="max-w-7xl mx-auto px-6">
 
-<h2 class="text-5xl font-bold">
+        <div class="text-center mb-10">
 
-Tentang Kelas
+            <span
+                class="text-sm font-semibold
+                       text-blue-600
+                       dark:text-cyan-400">
 
-</h2>
+                TENTANG KELAS
 
-<p class="mt-6 text-slate-600 leading-8 max-w-3xl mx-auto">
+            </span>
 
-XII PPLG 2 merupakan kelas Program Pengembangan
-Perangkat Lunak dan Gim yang berkomitmen menjadi
-kelas yang aktif, kreatif, inovatif, dan siap menghadapi
-perkembangan teknologi digital.
+            <h2
+                class="mt-2
+                       text-3xl md:text-4xl
+                       font-bold
+                       text-slate-900
+                       dark:text-white">
 
-</p>
+                Mengenal XII PPLG 2
 
-</div>
+            </h2>
+
+            <p
+                class="mt-3
+                       max-w-2xl
+                       mx-auto
+                       text-slate-600
+                       dark:text-slate-300">
+
+                XII PPLG 2 merupakan kelas Program Pengembangan
+                Perangkat Lunak dan Gim yang berkomitmen menjadi
+                kelas yang aktif, kreatif, inovatif, dan siap menghadapi
+                perkembangan teknologi digital.
+
+            </p>
+
+        </div>
+
+        {{-- Konten About --}}
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+            {{-- konten kiri --}}
+
+            {{-- konten kanan --}}
+
+        </div>
+
+    </div>
 
 </section>

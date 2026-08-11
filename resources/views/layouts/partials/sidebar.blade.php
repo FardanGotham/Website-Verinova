@@ -50,7 +50,6 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 hover:translate-x-1
 duration-300 text-slate-300' }}">
 
-🏠
 
 <span>Dashboard</span>
 
@@ -62,7 +61,6 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
     ? 'bg-blue-600 text-white shadow-lg'
     : 'hover:bg-slate-800 hover:translate-x-1 duration-300 text-slate-300' }}">
 
-    👨‍🎓
     <span>Data Siswa</span>
 
 </a>
@@ -76,7 +74,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 hover:translate-x-1
 duration-300 text-slate-300' }}">
 
-            👔
+        
             <span>Struktur Organisasi</span>
 
         </a>
@@ -90,7 +88,7 @@ duration-300 text-slate-300' }}">
 hover:translate-x-1
 duration-300 text-slate-300' }}">
 
-            📅
+        
             <span>Jadwal</span>
 
         </a>
@@ -104,7 +102,7 @@ duration-300 text-slate-300' }}">
 hover:translate-x-1
 duration-300 text-slate-300' }}">
 
-            📸
+            
             <span>Galeri</span>
 
         </a>
@@ -114,7 +112,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 ? 'bg-blue-600 text-white shadow-lg'
 : 'hover:bg-slate-800 hover:translate-x-1 duration-300 text-slate-300' }}">
 
-🏆
+
 
 <span>Prestasi</span>
 
@@ -126,7 +124,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 ? 'bg-blue-600 text-white shadow-lg'
 : 'hover:bg-slate-800 hover:translate-x-1 duration-300 text-slate-300' }}">
 
-📢<span>Info Kelas</span>
+<span>Info Kelas</span>
 </a>
 
 <a href="{{ route('duty-schedules.index') }}"
@@ -135,7 +133,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 ? 'bg-blue-600 text-white shadow-lg'
 : 'hover:bg-slate-800 hover:translate-x-1 duration-300 text-slate-300' }}">
 
-🧹
+
 
 <span>Jadwal Piket</span>
 
@@ -146,7 +144,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
 {{ request()->routeIs('admins.*')
 ? 'bg-blue-600 text-white shadow-lg'
 : 'hover:bg-slate-800 hover:translate-x-1 duration-300 text-slate-300' }}">
-👤
+
 <span>Kelola Admin</span>
 </a>
 @endif
@@ -156,8 +154,8 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
             <p class="px-4 text-xs uppercase text-slate-500 mb-2">
                 Segera Hadir
             </p>
-            <div class="px-4 py-2 text-slate-500">📂 Download</div>
-            <div class="px-4 py-2 text-slate-500">📖 Buku Kenangan</div>
+            <div class="px-4 py-2 text-slate-500"> Download</div>
+            <div class="px-4 py-2 text-slate-500"> Buku Kenangan</div>
 
         </div>
 
@@ -172,7 +170,7 @@ class="flex items-center gap-3 px-4 py-3 rounded-xl transition
             <button
                 class="w-full bg-red-500 hover:bg-red-600 rounded-xl py-3 transition">
 
-                🚪 Logout
+                 Logout
 
             </button>
 

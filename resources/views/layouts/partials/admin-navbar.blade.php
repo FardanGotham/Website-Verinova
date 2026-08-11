@@ -6,7 +6,7 @@
         </h2>
 
         <p class="text-slate-500 text-sm">
-            Selamat datang kembali 👋
+            Selamat datang kembali 
         </p>
     </div>
 

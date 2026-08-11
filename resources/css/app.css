@@ -12,3 +12,81 @@
 html{
     scroll-behavior:smooth;
 }
+
+/* =========================
+   HERO SLIDESHOW
+========================= */
+
+.hero-slider {
+    position: relative;
+}
+
+.hero-slides {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: heroAutoSlide 16s infinite;
+}
+
+.hero-slide {
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   AUTO SLIDE
+========================= */
+
+@keyframes heroAutoSlide {
+
+    0%,
+    20% {
+        transform: translateX(0);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-25%);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-50%);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+
+.hero-slider {
+    animation: heroFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
