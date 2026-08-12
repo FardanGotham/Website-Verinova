@@ -22,6 +22,8 @@ class HomeController extends Controller
 
     'photos' => Gallery::count(),
 
+    'organizationsCount' => Organization::count(),
+
     'organizations' => Organization::all(),
 
     'galleries' => Gallery::latest()->take(6)->get(),

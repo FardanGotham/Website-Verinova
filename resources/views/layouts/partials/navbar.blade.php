@@ -41,49 +41,81 @@
 
 
             {{-- MENU --}}
-            <div class="hidden lg:flex items-center gap-1">
+            <nav class="hidden lg:flex items-center gap-1">
 
-                <a href="#hero"
-                   class="nav-link">
-                    Beranda
-                </a>
+    <a href="#hero"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Beranda
+    </a>
 
-                <a href="#about"
-                   class="nav-link">
-                    Tentang
-                </a>
+    <a href="#about"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Tentang
+    </a>
 
-                <a href="#organization"
-                   class="nav-link">
-                    Organisasi
-                </a>
+    <a href="#organization"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Organisasi
+    </a>
 
-                <a href="#schedule"
-                   class="nav-link">
-                    Jadwal
-                </a>
+    <a href="#schedule"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Jadwal
+    </a>
 
-                <a href="#piket"
-                   class="nav-link">
-                    Piket
-                </a>
+    <a href="#piket"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Piket
+    </a>
 
-                <a href="#gallery"
-                   class="nav-link">
-                    Galeri
-                </a>
+    <a href="#gallery"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Galeri
+    </a>
 
-                <a href="#achievement"
-                   class="nav-link">
-                    Prestasi
-                </a>
+    <a href="#achievement"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Prestasi
+    </a>
 
-                <a href="#info-kelas"
-                   class="nav-link">
-                    Info
-                </a>
+    <a href="#info-kelas"
+        class="px-4 py-2 rounded-xl text-sm font-medium
+               text-slate-800 dark:text-white
+               hover:text-blue-600 dark:hover:text-cyan-300
+               hover:bg-blue-50 dark:hover:bg-white/10
+               transition-all duration-300">
+        Info
+    </a>
 
-            </div>
+</nav>
 
 
             {{-- RIGHT --}}
@@ -337,53 +369,5 @@
 
     });
 
-
-    /* =========================
-       ACTIVE MENU SAAT SCROLL
-    ========================= */
-
-    const sections = document.querySelectorAll(
-        'section[id]'
-    );
-
-    const navLinks = document.querySelectorAll(
-        '.nav-link'
-    );
-
-
-    window.addEventListener('scroll', () => {
-
-        let current = 'hero';
-
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 150;
-
-            if (window.scrollY >= sectionTop) {
-
-                current = section.getAttribute('id');
-
-            }
-
-        });
-
-
-        navLinks.forEach(link => {
-
-            link.classList.remove('active');
-
-            if (
-                link.getAttribute('href') === '#' + current
-            ) {
-
-                link.classList.add('active');
-
-            }
-
-        });
-
-    });
 
 </script>
