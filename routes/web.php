@@ -8,14 +8,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\Admin\OrganizationController as AdminOrganizationController;
-use App\Http\Controllers\Admin\ScheduleController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\Admin\ScheduleController as AdminScheduleController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
 use App\Http\Controllers\Admin\ClassInfoController;
 use App\Http\Controllers\Admin\DutyScheduleController;
 use App\Http\Controllers\Admin\AdminController;
 
-Route::get('/jadwal', [ScheduleController::class,'index'])
+Route::get('/jadwal', [ScheduleController::class, 'index'])
     ->name('schedule');
 Route::get('/', [HomeController::class, 'index']);
 // Halaman Profil Kelas
@@ -47,7 +48,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::resource('organizations', AdminOrganizationController::class);
-    Route::resource('schedules', ScheduleController::class);
+    Route::resource('schedules', AdminScheduleController::class);
     Route::resource('galleries', GalleryController::class);
     Route::resource('achievements', AdminAchievementController::class);
     Route::resource('class-infos', ClassInfoController::class);

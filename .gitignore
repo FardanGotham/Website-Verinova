@@ -25,3 +25,8 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/database/verinova_data_backup.json
+*.sqlite
+*.sqlite-journal
+*.sql
+!/database/reset_sequences.sql

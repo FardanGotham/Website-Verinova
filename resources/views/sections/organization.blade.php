@@ -19,66 +19,137 @@
         {{-- Card Organisasi --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-            @forelse($organizations as $member)
+    @forelse($organizations as $organization)
 
+        <div
+            class="group bg-white dark:bg-slate-900
+                   border border-slate-200 dark:border-slate-800
+                   rounded-3xl overflow-hidden
+                   shadow-lg dark:shadow-black/20
+                   hover:-translate-y-2 hover:shadow-2xl
+                   transition-all duration-300">
+
+            {{-- Header Card --}}
+            <div class="h-24 bg-gradient-to-r from-blue-600 to-cyan-500
+                        relative">
+
+                {{-- Efek cahaya --}}
                 <div
-                    class="bg-white rounded-3xl shadow-lg p-8 text-center hover:-translate-y-2 hover:shadow-2xl transition duration-300"
-                    data-aos="zoom-in">
+                    class="absolute -top-10 -right-10
+                           w-24 h-24 bg-white/20
+                           rounded-full blur-2xl">
+                </div>
 
-                    {{-- Foto --}}
-                    @if($member->photo)
+            </div>
+
+
+            {{-- Isi --}}
+            <div class="relative text-center px-6 pb-7">
+
+                {{-- Foto --}}
+                <div class="-mt-12 mb-5">
+
+                    @if($organization->photo)
 
                         <img
-                            src="{{ asset('storage/' . $member->photo) }}"
-                            alt="{{ $member->name }}"
-                            class="w-32 h-32 rounded-full object-cover mx-auto border-4 border-blue-100">
+                            src="{{ asset('storage/'.$organization->photo) }}"
+                            alt="{{ $organization->name }}"
+                            class="w-24 h-24 mx-auto
+                                   rounded-full
+                                   object-cover
+                                   border-4
+                                   border-white
+                                   dark:border-slate-900
+                                   shadow-lg
+                                   group-hover:scale-105
+                                   transition duration-300">
 
                     @else
 
-                        <div class="w-32 h-32 rounded-full bg-slate-200 flex items-center justify-center mx-auto">
+                        <div
+                            class="w-24 h-24 mx-auto
+                                   rounded-full
+                                   bg-slate-100
+                                   dark:bg-slate-800
+                                   border-4
+                                   border-white
+                                   dark:border-slate-900
+                                   flex items-center justify-center
+                                   shadow-lg">
 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="w-14 h-14 text-slate-500"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M5.121 17.804A9 9 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-
-                            </svg>
+                            <i class="fa-solid fa-user
+                                      text-3xl
+                                      text-slate-400
+                                      dark:text-slate-500">
+                            </i>
 
                         </div>
 
                     @endif
 
-                    {{-- Nama --}}
-                    <h3 class="text-2xl font-bold mt-6 text-slate-800">
-                        {{ $member->name }}
-                    </h3>
-
-                    {{-- Jabatan --}}
-                    <p class="text-blue-600 font-medium mt-2">
-                        {{ $member->position }}
-                    </p>
-
                 </div>
 
-            @empty
 
-                <div class="col-span-4 text-center py-16">
+                {{-- Nama --}}
+                <h3
+                    class="text-xl font-bold
+                           text-slate-800
+                           dark:text-white
+                           group-hover:text-blue-600
+                           dark:group-hover:text-cyan-400
+                           transition">
 
-                    <h3 class="text-2xl font-semibold text-slate-500">
-                        Belum ada data pengurus.
-                    </h3>
+                    {{ $organization->name }}
 
-                </div>
+                </h3>
 
-            @endforelse
+
+                {{-- Jabatan --}}
+                <p
+                    class="mt-2
+                           text-blue-600
+                           dark:text-cyan-400
+                           font-semibold">
+
+                    {{ $organization->position }}
+
+                </p>
+
+            </div>
 
         </div>
+
+    @empty
+
+        <div class="col-span-full text-center py-16">
+
+            <div class="text-6xl mb-4">
+                👥
+            </div>
+
+            <h3
+                class="text-2xl font-bold
+                       text-slate-800
+                       dark:text-white">
+
+                Belum Ada Pengurus
+
+            </h3>
+
+            <p
+                class="mt-2
+                       text-slate-600
+                       dark:text-slate-400">
+
+                Data struktur organisasi belum tersedia.
+
+            </p>
+
+        </div>
+
+    @endforelse
+
+</div>
 
     </div>
 

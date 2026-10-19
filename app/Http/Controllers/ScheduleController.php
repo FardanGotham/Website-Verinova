@@ -21,6 +21,6 @@ class ScheduleController extends Controller
         ->get()
         ->groupBy('day');
 
-        return view('schedule.index', compact('days','schedules'));
+        return view('schedules.index', compact('days','schedules'));
     }
 }

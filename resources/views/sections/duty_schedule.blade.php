@@ -19,7 +19,14 @@
 
             @foreach($duties as $duty)
 
-            <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300">
+            <div
+                    class="bg-white dark:bg-slate-900
+                           border border-slate-200 dark:border-slate-800
+                           rounded-3xl
+                           shadow-lg dark:shadow-black/30
+                           overflow-hidden
+                           hover:-translate-y-2 hover:shadow-2xl    
+                           transition-all duration-300">
 
                 <div class="flex justify-between items-center mb-6">
 

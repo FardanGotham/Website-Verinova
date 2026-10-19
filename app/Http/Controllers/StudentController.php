@@ -8,20 +8,26 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index(Request $request)
-{
-    $search = $request->search;
+    {
+        $search = $request->search;
 
-    $students = Student::when($search, function ($query) use ($search) {
-            $query->where('nama', 'like', "%{$search}%")
-                  ->orWhere('kelas', 'like', "%{$search}%")
-                  ->orWhere('absen', 'like', "%{$search}%");
-        })
-        ->orderBy('absen')
-        ->paginate(12)
-        ->withQueryString();
+        $students = Student::when($search, function ($query) use ($search) {
+                $like = config('database.default') === 'pgsql' ? 'ilike' : 'like';
+                $query->where(function ($q) use ($search, $like) {
+                    $q->where('nama', $like, "%{$search}%")
+                      ->orWhere('kelas', $like, "%{$search}%");
 
-    return view('students.index', compact('students'));
-}
+                    if (is_numeric($search)) {
+                        $q->orWhere('absen', (int) $search);
+                    }
+                });
+            })
+            ->orderBy('absen')
+            ->paginate(12)
+            ->withQueryString();
+
+        return view('students.index', compact('students'));
+    }
     public function adminIndex()
 {
     $students = Student::latest()->get();

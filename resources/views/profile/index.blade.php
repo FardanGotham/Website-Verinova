@@ -31,15 +31,15 @@
 <div>
 
 <h2 class="text-4xl font-bold text-slate-800">
-    {{ $profile->class_name }}
+    {{ $profile?->class_name ?? 'XII PPLG 2' }}
 </h2>
 
 <p class="text-blue-600 text-xl mt-3">
-    {{ $profile->slogan }}
+    {{ $profile?->slogan ?? 'Verinova — Generasi Inovatif dan Berprestasi' }}
 </p>
 
 <p class="mt-8 text-gray-600 leading-8">
-    {{ $profile->history }}
+    {{ $profile?->history ?? 'Informasi profil kelas belum diisi.' }}
 </p>
 
 </div>
@@ -63,7 +63,7 @@ Visi
 </h3>
 
 <p class="leading-8 text-gray-700">
-{{ $profile->vision }}
+{{ $profile?->vision ?? 'Belum ada data visi.' }}
 </p>
 
 </div>
@@ -75,7 +75,7 @@ Misi
 </h3>
 
 <p class="leading-8 text-gray-700">
-{{ $profile->mission }}
+{{ $profile?->mission ?? 'Belum ada data misi.' }}
 </p>
 
 </div>
@@ -87,7 +87,7 @@ Motto
 </h3>
 
 <p class="leading-8 text-gray-700">
-{{ $profile->motto }}
+{{ $profile?->motto ?? 'Belum ada data motto.' }}
 </p>
 
 </div>
@@ -99,7 +99,7 @@ Filosofi Logo
 </h3>
 
 <p class="leading-8 text-gray-700">
-{{ $profile->logo_philosophy }}
+{{ $profile?->logo_philosophy ?? 'Belum ada data filosofi logo.' }}
 </p>
 
 </div>

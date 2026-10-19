@@ -11,7 +11,19 @@ class DutyScheduleController extends Controller
 {
     public function index()
     {
-        $duties = DutySchedule::orderBy('day')->get();
+        $daysOrder = [
+            'Senin' => 1,
+            'Selasa' => 2,
+            'Rabu' => 3,
+            'Kamis' => 4,
+            'Jumat' => 5,
+        ];
+
+        $duties = DutySchedule::with(['student1', 'student2', 'student3', 'student4', 'student5'])
+            ->get()
+            ->sortBy(function ($duty) use ($daysOrder) {
+                return $daysOrder[$duty->day] ?? 99;
+            });
 
         return view('admin.duty_schedules.index', compact('duties'));
     }
