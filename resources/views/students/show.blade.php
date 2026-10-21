@@ -55,23 +55,7 @@
 
                 @else
 
-                    <div
-                        class="w-44 h-44
-                               rounded-full
-                               bg-slate-200
-                               dark:bg-slate-700
-                               border-8
-                               border-white
-                               dark:border-slate-900
-                               flex items-center
-                               justify-center
-                               text-6xl
-                               mx-auto
-                               shadow-lg">
-
-                        👤
-
-                    </div>
+                    <div class="w-44 h-44 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 border-8 border-white dark:border-slate-900 flex items-center justify-center text-4xl font-extrabold text-white mx-auto shadow-lg">{{ strtoupper(substr($student->nama, 0, 2)) }}</div>
 
                 @endif
 

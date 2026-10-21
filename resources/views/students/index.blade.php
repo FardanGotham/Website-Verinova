@@ -32,7 +32,7 @@
             <input
                 type="text"
                 id="search"
-                placeholder="🔍 Cari nama siswa..."
+                placeholder="Cari nama siswa..."
                 class="w-full rounded-2xl border border-slate-300 dark:border-slate-700 dark:bg-slate-900 dark:text-white px-5 py-4 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none">
 
         </div>
@@ -78,21 +78,7 @@
 
             @else
 
-                <div
-                    class="w-28 h-28
-                           rounded-full
-                           bg-slate-200
-                           dark:bg-slate-700
-                           border-4 border-white
-                           dark:border-slate-900
-                           flex items-center
-                           justify-center
-                           mx-auto
-                           text-4xl">
-
-                    👤
-
-                </div>
+                <div class="w-28 h-28 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-500 border-4 border-white dark:border-slate-900 flex items-center justify-center mx-auto text-2xl font-bold text-white shadow-md">{{ strtoupper(substr($student->nama, 0, 2)) }}</div>
 
             @endif
 
@@ -154,7 +140,7 @@
                                    font-medium
                                    whitespace-nowrap">
 
-                            👑 Ketua Kelas
+                            <x-icon name="trophy" class="w-3.5 h-3.5 text-amber-500 shrink-0" /> <span>Ketua Kelas</span>
 
                         </span>
 
@@ -174,7 +160,7 @@
                                    font-medium
                                    whitespace-nowrap">
 
-                            ⭐ Wakil Ketua
+                            <x-icon name="sparkles" class="w-3.5 h-3.5 text-blue-500 shrink-0" /> <span>Wakil Ketua</span>
 
                         </span>
 
@@ -194,7 +180,7 @@
                                    font-medium
                                    whitespace-nowrap">
 
-                            📝 Sekretaris
+                            <x-icon name="pencil" class="w-3.5 h-3.5 text-purple-500 shrink-0" /> <span>Sekretaris</span>
 
                         </span>
 
@@ -214,7 +200,7 @@
                                    font-medium
                                    whitespace-nowrap">
 
-                            💰 Bendahara
+                            <x-icon name="shield-check" class="w-3.5 h-3.5 text-emerald-500 shrink-0" /> <span>Bendahara</span>
 
                         </span>
 
@@ -256,9 +242,7 @@
     {{-- Jika Tidak Ada Data --}}
     <div class="col-span-full text-center py-20">
 
-        <div class="text-7xl mb-4">
-            📚
-        </div>
+        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-400 mx-auto flex items-center justify-center mb-4"><x-icon name="book-open" class="w-8 h-8" /></div>
 
         <h2
             class="text-3xl
